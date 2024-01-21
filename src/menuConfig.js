@@ -7,9 +7,11 @@ import Settings from "./layout/pages/settings-page/Settings";
 import ServicesPage from "./layout/pages/services-page/ServicesPage"
 import Priviligies from "./layout/pages/priviligies/Priviligies"
 import Loans from "./layout/pages/loans/Loans";
+import Layout from "./layout/layout";
 
 export const MenuConfig = [
-    { path: '', element: <Dashboard /> },
+    { path: '', element: <Layout /> },
+    { path: 'dashboard', element: <Dashboard /> },
     { path: '/transactions', element: <Transactions /> },
     { path: '/accounts', element: <Accounts /> },
     { path: '/investments', element: <Investments /> },
