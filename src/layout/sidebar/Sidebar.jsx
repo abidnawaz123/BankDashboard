@@ -24,7 +24,8 @@ const SideBar = () => {
                         <MenuItem>
                             <Typography className={styles.navMenus}>{item.name}</Typography>
                         </MenuItem>
-                    </NavLink>))}
+                    </NavLink>))
+            }
             </MenuList>
         </div>
     )
