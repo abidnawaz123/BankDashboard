@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import { MenuConfig } from "./menuConfig";
 import Layout from "./layout/layout";
 import Dashboard from "./layout/pages/dashboard/Dashboard";
 import Transactions from "./layout/pages/transactions/Transactions";

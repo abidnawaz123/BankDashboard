@@ -15,7 +15,7 @@ const SideBar = () => {
                     </Box>
                     {
                         Menus.map(item => (
-                            <NavLink to={item.path}>
+                            <NavLink key={item.path} to={item.path}>
                                 <MenuItem>
                                     <Typography className={styles.navMenus}>{item.name}</Typography>
                                 </MenuItem>
