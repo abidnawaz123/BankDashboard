@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import CreditCard from '../../../components/Credit-Card/CreditCard'
 import CustomModal from '../../../components/modal/CustomModal'
 import { SEE_ALL } from '../../../utils/constants'
+import styles from "./style.module.scss"
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false)
@@ -15,7 +16,7 @@ const Dashboard = () => {
     <div className={styles.dashboardWrapper}>
       <Box className={styles.cardWrapper}>
         <Typography>My Cards</Typography>
-        <Typography className={style.seeAllCards}
+        <Typography className={styles.seeAllCards}
           onClick={showAllCards}>
           {SEE_ALL}
         </Typography>

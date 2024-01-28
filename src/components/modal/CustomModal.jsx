@@ -1,7 +1,6 @@
 import { Box, Modal } from '@mui/material';
 import React from 'react'
 import styles from "./style.module.scss"
-import CloseIcon from '@mui/icons-material/Close';
 
 const style = {
   position: 'absolute',
@@ -26,7 +25,6 @@ const CustomModal = ({ open, setOpen }) => {
         className={styles.customModalStyle}
       >
         <Box sx={style}>
-          <CloseIcon/>
         </Box>
       </Modal>
     </div>
