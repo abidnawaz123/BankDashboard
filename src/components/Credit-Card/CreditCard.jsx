@@ -6,8 +6,9 @@ import cardChip from "../../assets/icons/CardChip.svg"
 import frontsideChipCard from "../../assets/icons/frontsideChipCard.svg"
 import styles from "./style.module.scss"
 import fadedMasterCard from "../../assets/icons/fadedMastercard.svg"
+import { cardDetails } from '../../utils/CardList'
 
-const CreditCard = ({backSideCard}) => {
+const CreditCard = ({ backSideCard }) => {
 
     const seeAllCards = () => {
     }
@@ -16,32 +17,35 @@ const CreditCard = ({backSideCard}) => {
         <div className={styles.cardWrapper}>
             {
                 !backSideCard ?
-                    <Box className={styles.frontSideCard}>
-                        <img src={cardImageFront}  />
-                        <Box className={styles.cardDetails}>
-                            <Box>
-                                <Typography variant='caption'>Balance</Typography>
-                                <Typography>$5756</Typography>
+                    cardDetails.slice(0, 1).map(item => (
+                        <Box className={styles.frontSideCard}>
+                            <img src={cardImageFront} />
+                            <Box className={styles.cardDetails}>
+                                <Box>
+                                    <Typography variant='caption'>{item.balanceType}</Typography>
+                                    <Typography>${item.balance}</Typography>
+                                </Box>
+                                <img src={frontsideChipCard} />
                             </Box>
-                            <img src={frontsideChipCard} />
-                        </Box>
-                        <Box className={styles.cardDetails2}>
-                            <Box>
-                                <Typography variant='caption'>CARD HOLDER</Typography>
-                                <Typography>$5756</Typography>
+                            <Box className={styles.cardDetails2}>
+                                <Box>
+                                    <Typography variant='caption'>{item.holder}</Typography>
+                                    <Typography>$5756</Typography>
+                                </Box>
+                                <Box>
+                                    <Typography variant='caption'>{item.validLable}</Typography>
+                                    <Typography>{item.time}</Typography>
+                                </Box>
                             </Box>
-                            <Box>
-                                <Typography variant='caption'>VALID THRU</Typography>
-                                <Typography>12/22</Typography>
+                            <Box className={styles.cardNumberDetails}>
+                                <Typography>{item.cardNumber}</Typography>
+                                <img src={fadedMasterCard} />
                             </Box>
                         </Box>
-                        <Box className={styles.cardNumberDetails}>
-                            <Typography>3778 **** **** 1234</Typography>
-                            <img src={fadedMasterCard} />
-                        </Box>
-                    </Box> :
+                    ))
+                    :
                     <Box className={styles.backSideCard}>
-                        <img src={cardImage}  />
+                        <img src={cardImage} />
                         <Box className={styles.cardDetails}>
                             <Box>
                                 <Typography variant='caption'>Balance</Typography>
