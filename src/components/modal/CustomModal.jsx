@@ -22,10 +22,8 @@ const CustomModal = ({ open, setOpen }) => {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className={styles.customModalStyle}
-      >
-        <Box sx={style}>
-        </Box>
+        className={styles.customModalStyle}>
+        <Box sx={style}></Box>
       </Modal>
     </div>
   )
