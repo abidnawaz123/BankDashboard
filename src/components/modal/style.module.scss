@@ -1,6 +1,15 @@
 .customModalStyle {
-    :global(.MuiBox-root) {
+    :global(.css-1acyv19) {
         width: 90%;
         height: 100vh;
+    }
+
+    .iconWrapper {
+        margin: 10px;
+        text-align: right;
+        width: 100%;
+        .iconStyle {
+            cursor: pointer;
+        }
     }
 }

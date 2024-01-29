@@ -1,7 +1,7 @@
 import { Box, Modal } from '@mui/material';
 import React from 'react'
 import styles from "./style.module.scss"
-
+import CloseOutlined from "@mui/icons-material/CloseOutlined"
 const style = {
   position: 'absolute',
   top: '50%',
@@ -13,7 +13,7 @@ const style = {
   p: 4,
 };
 
-const CustomModal = ({ open, setOpen }) => {
+const CustomModal = ({ open, setOpen,children }) => {
   const handleClose = () => setOpen(false);
   return (
     <div>
@@ -25,6 +25,10 @@ const CustomModal = ({ open, setOpen }) => {
         className={styles.customModalStyle}
       >
         <Box sx={style}>
+          <div className={styles.iconWrapper}>
+          <CloseOutlined className={styles.iconStyle} onClick={handleClose}/>
+          </div>
+          {children && children}
         </Box>
       </Modal>
     </div>
