@@ -10,7 +10,7 @@ const SideBar = () => {
             <div className={styles.sidebarWrapper}>
                 <MenuList>
                     <Box className={styles.logoWrapper}>
-                        <img src={logoicon} alt="logo"/>
+                        <img src={logoicon} alt="logo" />
                         <Typography variant='h4' className={styles.LogoLabel}>BankDash.</Typography>
                     </Box>
                     {
@@ -19,8 +19,7 @@ const SideBar = () => {
                                 <MenuItem>
                                     <Typography className={styles.navMenus}>{item.name}</Typography>
                                 </MenuItem>
-                            </NavLink>))
-                    }
+                            </NavLink>))}
                 </MenuList>
             </div>
         </>

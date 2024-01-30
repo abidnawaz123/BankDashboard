@@ -1,4 +1,39 @@
-.headerWrapper{
+.headerWrapper {
     background-color: #fff;
-    padding: 10px 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .headerRightside {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .searchFieldWrapper {
+            display: flex;
+            align-items: center;
+            background-color: #F5F7FA;
+            padding: 5px 10px;
+            border-radius: 8px;
+            max-width: 255px;
+
+            .headerSearchField {
+                padding: 10px;
+                background-color: #F5F7FA;
+                border: none;
+                outline: none;
+
+                &::placeholder {
+                    color: #8BA3CB;
+                }
+            }
+        }
+    }
+
+    .gearIcon,
+    .notificationIcon {
+        background-color: #F5F7FA;
+        padding: 5px;
+        border-radius: 100%;
+    }
 }
