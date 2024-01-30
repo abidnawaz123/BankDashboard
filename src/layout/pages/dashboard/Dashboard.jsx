@@ -1,32 +1,24 @@
-import { Box, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React from 'react'
+import { Grid } from '@mui/material'
 import CreditCard from '../../../components/Credit-Card/CreditCard'
-import CustomModal from '../../../components/modal/CustomModal'
-import { SEE_ALL } from '../../../utils/constants'
 import styles from "./style.module.scss"
-import CardListing from '../../../components/Credit-Card/CardListing'
+import TransactionDetails from './recent/Transaction'
 
 const Dashboard = () => {
-  const [open, setOpen] = useState(false)
-
-  const showAllCards = () => {
-    setOpen(true)
-  }
 
   return (
     <div className={styles.dashboardWrapper}>
-      <Box className={styles.cardWrapper}>
-        <Typography>My Cards</Typography>
-        <Typography className={styles.seeAllCards}
-          onClick={showAllCards}>
-          {SEE_ALL}
-        </Typography>
-      </Box>
-      <Box display="flex">
-        <CreditCard backSideCard />
-        <CreditCard />
-      </Box>
-      <CustomModal open={open} setOpen={setOpen} children={<CardListing/> } />
+      <Grid container spacing={2}>
+        <Grid xs={12} md={6} lg={4}>
+          <CreditCard backSideCard />
+        </Grid>
+        <Grid xs={12} md={6} lg={4}>
+          <CreditCard />
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <TransactionDetails />
+        </Grid>
+      </Grid>
     </div>
   )
 }

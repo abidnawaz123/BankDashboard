@@ -2,6 +2,10 @@
     :global(.css-1acyv19) {
         width: 90%;
         height: 100vh;
+        overflow-y: scroll;
+        padding: 25px;
+        overflow-x: hidden;
+        background-color: #F5F7FA;
     }
 
     .iconWrapper {

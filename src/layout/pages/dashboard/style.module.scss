@@ -1,13 +1,3 @@
 .dashboardWrapper {
     padding: 20px;
-
-    .cardWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 750px;
-        .seeAllCards{
-            cursor: pointer;
-        }
-    }
 }
