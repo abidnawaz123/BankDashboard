@@ -4,7 +4,6 @@ import CreditCard from '../../../components/Credit-Card/CreditCard'
 import CustomModal from '../../../components/modal/CustomModal'
 import { SEE_ALL } from '../../../utils/constants'
 import styles from "./style.module.scss"
-import { cardDetails } from '../../../utils/CardList'
 import CardListing from '../../../components/Credit-Card/CardListing'
 
 const Dashboard = () => {

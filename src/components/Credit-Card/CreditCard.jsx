@@ -9,23 +9,19 @@ import fadedMasterCard from "../../assets/icons/fadedMastercard.svg"
 import { cardDetails } from '../../utils/CardList'
 
 const CreditCard = ({ backSideCard }) => {
-
-    const seeAllCards = () => {
-    }
-
     return (
         <div className={styles.cardWrapper}>
             {
                 !backSideCard ?
                     cardDetails.slice(0, 1).map(item => (
                         <Box className={styles.frontSideCard}>
-                            <img src={cardImageFront} />
+                            <img src={cardImageFront} alt="cardimagefront" />
                             <Box className={styles.cardDetails}>
                                 <Box>
                                     <Typography variant='caption'>{item.balanceType}</Typography>
                                     <Typography>${item.balance}</Typography>
                                 </Box>
-                                <img src={frontsideChipCard} />
+                                <img src={frontsideChipCard} alt="cardimagefrontChip" />
                             </Box>
                             <Box className={styles.cardDetails2}>
                                 <Box>
@@ -39,19 +35,19 @@ const CreditCard = ({ backSideCard }) => {
                             </Box>
                             <Box className={styles.cardNumberDetails}>
                                 <Typography>{item.cardNumber}</Typography>
-                                <img src={fadedMasterCard} />
+                                <img src={fadedMasterCard} alt="mastercardimage" />
                             </Box>
                         </Box>
                     ))
                     :
                     <Box className={styles.backSideCard}>
-                        <img src={cardImage} />
+                        <img src={cardImage} alt="cardimage" />
                         <Box className={styles.cardDetails}>
                             <Box>
                                 <Typography variant='caption'>Balance</Typography>
                                 <Typography>$5756</Typography>
                             </Box>
-                            <img src={cardChip} />
+                            <img src={cardChip} alt="cardChipimage" />
                         </Box>
                         <Box className={styles.cardDetails2}>
                             <Box>
@@ -65,7 +61,7 @@ const CreditCard = ({ backSideCard }) => {
                         </Box>
                         <Box className={styles.cardNumberDetails}>
                             <Typography>3778 **** **** 1234</Typography>
-                            <img src={fadedMasterCard} />
+                            <img src={fadedMasterCard} alt="mastercardimage" />
                         </Box>
                     </Box>
             }
