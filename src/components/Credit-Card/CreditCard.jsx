@@ -6,7 +6,7 @@ const CreditCard = ({ backSideCard }) => {
 
     return (
         <>
-           <SharedCard children={<CardItem/>}/>
+           {/* <SharedCard children={<CardItem/>}/> */}
         </>
     )
     // <div className={styles.cardWrapper}>

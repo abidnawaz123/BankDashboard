@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Paper, Typography, styled } from '@mui/material';
+import { Box, Card, CardContent, Paper, Typography, styled } from '@mui/material';
+import { images } from "../../../utils/images";
+import styles from "./style.module.scss"
 
 const Item = styled(Paper)(() => ({
     maxHeight: 235,
@@ -9,26 +11,32 @@ const Item = styled(Paper)(() => ({
 
 const SharedCard = ({ children }) => {
     return (
-        <Box>
-            <Item elevation={1} style={{ backgroundColor: "#2B27F1", color: "white", padding: 10 }}>
-                <Box>
-                    <Typography variant="h6">Balance</Typography>
-                    <Typography variant="caption">$5756</Typography>
+        <Card>
+            <CardContent>
+                <Box className={styles.detailsCard}>
+                    <Box>
+                        <Typography variant="body2">Balance</Typography>
+                        <Typography variant="h5">$5756</Typography>
+                    </Box>
+                    <img src={images.cardChip} alt="cardChip" />
                 </Box>
-                <Box>
-                    <Typography variant="h6">CARD HOLDER</Typography>
-                    <Typography variant="caption">$5756</Typography>
+                <Box className={styles.cardValidityLable}>
+                    <Box >
+                        <Typography variant="body2">CARD HOLDER</Typography>
+                        <Typography variant="h5">Eddy Cusuma</Typography>
+                    </Box>
+                    <Box>
+                        <Typography variant="body2">VALID THRU</Typography>
+                        <Typography variant="h5">12/22</Typography>
+                    </Box>
                 </Box>
-                <Box>
-                    <Typography variant="h6">VALID THRU</Typography>
-                    <Typography variant="caption">12/22</Typography>
+                <Box className={styles.bottomCardDetails}>
+                    <Typography variant="body1">3778 **** **** 1234</Typography>
+                    <img src={images.mastercard} />
                 </Box>
-                <Box>
-                    <Typography variant="h6">3778 **** **** 1234</Typography>
-                    <Typography variant="caption">x</Typography>
-                </Box>
-            </Item>
-        </Box >
+
+            </CardContent>
+        </Card>
     )
 }
 export default SharedCard;

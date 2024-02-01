@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./style.module.scss"
 import { Box, MenuItem, MenuList, Typography } from '@mui/material'
 import { NavLink } from 'react-router-dom'
 import logoicon from "../../assets/icons/logoicon.svg"
 import { Menus } from './MenuItems'
+import { MenuOutlined } from '@mui/icons-material'
 const SideBar = () => {
+    const [showMenus, setShowMenus] = useState(true)
     return (
         <>
-            <div className={styles.sidebarWrapper}>
+            <span className={styles.menuIconBox}>
+                <MenuOutlined fontSize='large'
+                    onClick={() => { setShowMenus(s => !s) }}
+                    className={styles.handleMenuIcon}
+                />
+            </span>
+            <div className={styles.sidebarWrapper}
+                style={showMenus ?
+                    { display: 'block' }
+                    : { display: 'none' }}
+            >
                 <MenuList>
                     <Box className={styles.logoWrapper}>
                         <img src={logoicon} alt="logo" />

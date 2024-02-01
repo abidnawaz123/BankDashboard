@@ -5,6 +5,13 @@
     height: 100vh;
     overflow-y: scroll;
 
+    @media(max-width:768px) {
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+    }
+
     ul {
         a {
             text-decoration: none;
@@ -16,6 +23,14 @@
 
             li {
                 padding: 20px;
+
+                @media(max-width:768px) {
+                    justify-content: center;
+                    margin: 2px;
+                    background-color: #9eb3f7;
+                    color: black;
+                    font-weight: bold;
+                }
             }
         }
     }
@@ -25,6 +40,10 @@
         justify-content: center;
         padding: 10px 0;
         user-select: none;
+        @media(max-width:768px){
+            padding: 10px;
+            justify-content: unset;
+        }
         .LogoLabel {
             color: #343C6A;
             font-weight: bolder;
@@ -32,3 +51,15 @@
         }
     }
 }
+
+.menuIconBox {
+    display: none;
+
+        @media(max-width:768px) {
+            display: block;
+            position: absolute;
+            right: 20px;
+            z-index: 3;
+            top: 22px;
+        }
+    }
