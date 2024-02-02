@@ -9,12 +9,12 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboardWrapper}>
       <Grid container spacing={2}>
-        <Grid xs={12} md={6} lg={4}>
-          <CreditCard backSideCard />
-        </Grid>
-        {/* <Grid xs={12} md={6} lg={4}>
+        <Grid item xs={12} md={6} lg={4}>
           <CreditCard />
-        </Grid> */}
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
+          <CreditCard />
+        </Grid>
         <Grid item xs={12} md={6} lg={4}>
           <TransactionDetails />
         </Grid>
