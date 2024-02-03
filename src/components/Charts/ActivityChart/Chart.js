@@ -1,67 +1,32 @@
-import React from 'react';
-import ReactApexChart from 'react-apexcharts';
+import ReactApexChart from "react-apexcharts";
 
-const MyApexChart = () => {
+export const ActivityChart = () => {
     const chartData = {
-        series: [{
-            name: 'Net Profit',
-            data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
-        }, {
-            name: 'Revenue',
-            data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
-        }, {
-            name: 'Free Cash Flow',
-            data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
-        }],
+        series: [44, 55, 41, 17, 15],
         options: {
             chart: {
-                type: 'bar',
-                height: 350
+                type: 'donut',
             },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '55%',
-                    endingShape: 'rounded'
-                },
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-            },
-            yaxis: {
-                title: {
-                    text: '$ (thousands)'
-                }
-            },
-            fill: {
-                opacity: 1
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                        return "$ " + val + " thousands"
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200,
+                    },
+                    legend: {
+                        position: 'bottom'
                     }
                 }
-            }
+            }]
         },
-    }
-
+    };
     return (
-        <div>
-            <div id="chart">
-                <ReactApexChart options={chartData.options} series={chartData.series} type="bar" height={350} />
-            </div>
-            <div id="html-dist"></div>
-        </div>
-    );
-}
+        <ReactApexChart options={chartData.options}
+            style={{ backgroundColor: "white", borderRadius: 20 }}
+            series={chartData.series}
+            height={350}
+            type="donut"
+        />
+    )
 
-export default MyApexChart;
+}

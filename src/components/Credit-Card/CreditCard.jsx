@@ -11,7 +11,7 @@ const CreditCard = ({ otherCard }) => {
     }));
     return (
         <>
-            <Box style={{ padding: 10 }}>
+            <Box >
                 <Item elevation={1}
                     style={otherCard ? {} : { backgroundColor: "#4C49ED", color: "white" }}
                 >

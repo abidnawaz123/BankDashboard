@@ -1,34 +1,73 @@
-import ReactApexChart from "react-apexcharts";
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
 
 export const ExpenseChart = () => {
-
-    const ChartData = {
-        series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
+    const chartData = {
+        series: [{
+            name: 'Net Profit',
+            data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+        }, {
+            name: 'Revenue',
+            data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+        }, {
+            name: 'Free Cash Flow',
+            data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+        }],
         options: {
             chart: {
-                type: 'polarArea',
+                type: 'bar',
+                toolbar:{
+                    show: false
+                }
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '55%',
+                    endingShape: 'rounded'
+                },
+            },
+            dataLabels: {
+                enabled: false
             },
             stroke: {
-                colors: ['#fff']
+                show: true,
+                width: 2,
+                colors: ['transparent']
+            },
+            xaxis: {
+                categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+            },
+            yaxis: {
+                title: {
+                    text: '$ (thousands)'
+                }
             },
             fill: {
-                opacity: 0.8
+                opacity: 1
             },
-            responsive: [{
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 200
-                    },
-                    legend: {
-                        position: 'bottom'
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        return "$ " + val + " thousands"
                     }
                 }
-            }]
+            }
         },
-    };
-    return (
-        <ReactApexChart options={ChartData.options} series={ChartData.series} type="polarArea" />
-    )
+    }
 
+    return (
+        <div>
+            <div id="chart">
+                <ReactApexChart
+                    options={chartData.options}
+                    series={chartData.series}
+                    type="bar"
+                    height={350}
+                    style={{ backgroundColor: "white", borderRadius: 20 }}
+                />
+            </div>
+            <div id="html-dist"></div>
+        </div>
+    );
 }
