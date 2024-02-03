@@ -1,25 +1,26 @@
-.BalanceDetails {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.creditNumber {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.7rem;
-
-    @media(max-width:475px) {
-        padding: unset;
+    .BalanceDetails {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
     }
-}
 
-.paperWrapper {
-    // style={{ backgroundColor: "#4C49ED", color: "white" }}
-    background-color: #4C49ED;
-    color: white;
-}
+    .creditNumber {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.7rem;
+
+        @media(max-width:475px) {
+            padding: unset;
+        }
+    }
+
+    .cardHolderLable {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 15px 0;
+    }
