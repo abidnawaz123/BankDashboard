@@ -1,27 +1,16 @@
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
-import CreditCard from '../../../../components/Credit-Card/CreditCard';
-import TransactionDetails from '../recent/Transaction';
+import { DashboardHeadingCardList } from '../../../../utils/data';
+import styles from "./style.module.scss";
 
 const TopSection = () => {
-
-  const HeadingCardList = [
-    { heading: "My Cards", component: <CreditCard otherCard /> },
-    { heading: "See All", component: <CreditCard /> },
-    { heading: "Recent Transactions", component: <TransactionDetails otherCard /> },
-  ]
-
   return (
-    <Grid container spacing={2} style={{ marginBottom: '2rem' }}>
+    <Grid container spacing={2} className={styles.dashboardtopSection}>
       {
-        HeadingCardList.map((item, ind) => (
+        DashboardHeadingCardList.map((item, ind) => (
           <Grid item xs={12} md={6} lg={4} key={ind}>
             <Typography fontWeight="bold"
-              style={{
-                textAlign: 'right',
-                marginRight: 12
-              }}
-            >
+              className={styles.dashboardCardsHeading}>
               {item.heading}
             </Typography>
             {item.component}

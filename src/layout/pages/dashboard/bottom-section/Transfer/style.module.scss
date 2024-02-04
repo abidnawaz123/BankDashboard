@@ -1,0 +1,45 @@
+.swiperButtonWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    .moveBackward,
+    .moveForward {
+        color: #718EBF;
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        cursor: pointer;
+        box-shadow: 0.5px 0.5px 2px 0.1px;
+    }
+}
+
+.sendAmountWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 10px;
+
+    .sendAmountLable {
+        color: #718EBF;
+    }
+
+    .actionField {
+        background-color: #EDF1F7;
+        border-radius: 30px;
+        margin-right: -100px;
+    }
+
+    .sendButton {
+        background-color: #1814F3;
+        color: white;
+        border-radius: 30px;
+        width: 160px;
+
+        .sendIcon {
+            color: white;
+            rotate: 320deg;
+        }
+    }
+}
