@@ -4,6 +4,7 @@ import CustomCreditCard from '../../../components/shared/customCard/customCard'
 import SplineChart from '../../../components/Charts/SplineChart/Chart'
 import CardListing from './card-listing/CardListing'
 import AddCard from './Add-Card/AddCard'
+import CardSetting from './card-setting/CardSetting'
 
 const CreditCards = () => {
   const cardDetails = {
@@ -37,12 +38,13 @@ const CreditCards = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2} style={{ marginTop: '2rem' }}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={8}>
           <Typography fontWeight="bold">Add New Card</Typography>
           <AddCard />
         </Grid>
         <Grid item xs={12} md={4}>
-
+        <Typography fontWeight="bold">Card Setting</Typography>
+          <CardSetting/>
         </Grid>
       </Grid>
     </div>
