@@ -1,13 +1,12 @@
-import { Card } from "@mui/material";
-import Basic from "./Formik/Basic";
+import { Card, Typography } from "@mui/material";
 import { ABOUT_A_CARD } from "../../../../utils/constants";
+import FormBase from "./Formik/form-base";
 
 const AddCard = () => {
     return (
-        <Card>
-            {ABOUT_A_CARD}
-            Add a card
-            <Basic />
+        <Card style={{borderRadius:8}}>
+            <Typography style={{ color: "#718EBF",padding:50,textAlign:"center" }}>{ABOUT_A_CARD}</Typography>
+            <FormBase />
         </Card>
     )
 
