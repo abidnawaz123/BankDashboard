@@ -37,7 +37,7 @@ const CreditCards = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2} style={{ marginTop: '2rem' }}>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={6}>
           <Typography fontWeight="bold">Add New Card</Typography>
           <AddCard />
         </Grid>
