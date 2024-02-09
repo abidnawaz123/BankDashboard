@@ -7,6 +7,7 @@ import { Menus } from './MenuItems'
 import { MenuOutlined } from '@mui/icons-material'
 const SideBar = () => {
     const [showMenus, setShowMenus] = useState(true)
+
     return (
         <>
             <span className={styles.menuIconBox}>
@@ -28,7 +29,14 @@ const SideBar = () => {
                     {
                         Menus.map(item => (
                             <NavLink key={item.path} to={item.path}>
-                                <MenuItem>
+                                <MenuItem
+                                    sx={{
+                                        ":focus": {
+                                            backgroundColor: 'Highlight',
+                                            color: "white"
+                                        }
+                                    }}
+                                >
                                     <Typography className={styles.navMenus}>{item.name}</Typography>
                                 </MenuItem>
                             </NavLink>))}

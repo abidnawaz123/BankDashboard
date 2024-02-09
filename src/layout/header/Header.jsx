@@ -1,23 +1,93 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./style.module.scss"
 import SearchIcon from '@mui/icons-material/Search';
-import { Avatar, Box } from '@mui/material';
+import { Avatar, Box, TextField, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import CustomModal from '../../components/shared/customModal/CustomModal';
+import { Menus } from '../sidebar/MenuItems';
+import { useNavigate } from 'react-router-dom';
 
 const CustomHeader = () => {
+  const [open, setOpen] = useState(false)
+  const [comps, setComps] = useState([])
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setComps(Menus)
+  }, [])
+
+  const handleChange = (e) => {
+    const searchValue = e.target.value;
+    const filteredArray = comps.filter(item =>
+      item.name.toLowerCase().split("").includes(searchValue.toLowerCase()))
+    if (!searchValue) {
+      setComps(Menus)
+    } else {
+      setComps(filteredArray)
+    }
+  }
+  const handleGoToSpecificPath = (path) => {
+    setOpen(false)
+    navigate(path)
+  }
   return (
     <div className={styles.headerWrapper}>
       <p>Overview</p>
       <Box className={styles.headerRightside}>
         <Box className={styles.searchFieldWrapper}>
           <SearchIcon style={{ color: "#718EBF" }} />
-          <input placeholder='Search for something' className={styles.headerSearchField} />
+          <input placeholder='Search for something'
+            onChange={() => { setOpen(true) }}
+            className={styles.headerSearchField} />
         </Box>
-        <SettingsIcon className={styles.gearIcon} style={{ color: '#718EBF' }} />
-        <NotificationsIcon color='error' className={styles.notificationIcon} />
+        <SettingsIcon
+          className={styles.gearIcon}
+          style={{ color: '#718EBF', cursor: 'pointer' }}
+          onClick={() => { navigate("/settings") }}
+        />
+        <NotificationsIcon color='error'
+          style={{ cursor: 'pointer' }}
+          className={styles.notificationIcon} />
         <Avatar variant='circular' />
       </Box>
+      {
+        open &&
+        <CustomModal
+          open={open}
+          setOpen={setOpen}
+          children={
+            <Box style={{ textAlign: "center" }}>
+              <TextField type='text'
+                placeholder='Search For Components'
+                fullWidth
+                onChange={handleChange}
+                sx={{
+                  "& fieldset": {
+                    // border: 'none',
+                    borderBottom: '1px solid blue'
+                  }
+                }} />
+              <Box>
+                {
+                  comps.map(item => (
+                    <Box style={{ padding: 5 }}
+                      onClick={() => { handleGoToSpecificPath(item.path) }}>
+                      <Typography
+                        style={{
+                          border: '1px solid ThreeDShadow',
+                          backgroundColor: "ButtonHighlight",
+                          padding: 20,
+                        }}>
+                        {item.name}
+                      </Typography>
+                    </Box>
+                  ))
+                }
+              </Box>
+            </Box>
+          } />
+      }
     </div>
   )
 }

@@ -1,0 +1,44 @@
+.loansSectionWrapper {
+    padding: 20px;
+
+    .personalLoanCard,
+    .corporateLoanCard,
+    .bussinessLoanCard,
+    .customLoanCard {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 8px;
+        gap: 10px;
+
+        .personIcon {
+            color: rgb(24, 20, 243);
+            background-color: rgb(231, 237, 255);
+            padding: 15px;
+            border-radius: 30px;
+        }
+
+        .caseIcon {
+            color: rgb(255, 187, 0);
+            background-color: rgb(255, 245, 217);
+            padding: 15px;
+            border-radius: 30px;
+        }
+
+        .increaseRateIcon {
+            color: rgb(255, 0, 191);
+            background-color: rgba(248, 171, 255, 0.714);
+            padding: 15px;
+            border-radius: 30px;
+        }
+
+        .moneyIcon {
+            color: rgb(29, 175, 139);
+            background-color: rgb(220, 250, 248);
+            padding: 15px;
+            border-radius: 30px;
+        }
+    }
+}

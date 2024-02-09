@@ -21,18 +21,18 @@ const CustomCreditCard = ({ otherCard, cardDetails }) => {
                     <Box>
                         <Box className={styles.BalanceDetails}>
                             <Box>
-                                <Typography variant='caption'>Balance</Typography>
+                                <Typography variant='caption' fontWeight="bold">Balance</Typography>
                                 <Typography variant='h5'>${currentBalance ? currentBalance : ""}</Typography>
                             </Box>
                             <img alt="chip" src={otherCard ? images.blackChip : images.cardChip} />
                         </Box>
                         <Box className={styles.cardHolderLable}>
                             <Box>
-                                <Typography variant='caption'>CARD HOLDER</Typography>
+                                <Typography variant='caption' fontWeight="bold">CARD HOLDER</Typography>
                                 <Typography variant='h5'>{cardHolder ? cardHolder : ""}</Typography>
                             </Box>
                             <Box>
-                                <Typography variant='caption'>VALID THRU</Typography>
+                                <Typography variant='caption' fontWeight="bold">VALID THRU</Typography>
                                 <Typography variant='h5'>{validThru ? validThru : ""}</Typography>
                             </Box>
                         </Box>
@@ -40,7 +40,7 @@ const CustomCreditCard = ({ otherCard, cardDetails }) => {
                             className={styles.creditNumber}
                             style={otherCard && { borderTop: "0.3px solid #DFEAF2" }}
                         >
-                            <Typography variant='h5'>{cardNumber ? cardNumber : ""}</Typography>
+                            <Typography variant='h6'>{cardNumber ? cardNumber : ""}</Typography>
                             <img alt="master-card" src={otherCard ? images.mastercardDark : images.mastercard} />
                         </Box>
                     </Box>
