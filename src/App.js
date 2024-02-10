@@ -1,7 +1,10 @@
-import { RouterProvider } from 'react-router-dom';
-import { router } from './Routers';
+import { Navigate, RouterProvider } from 'react-router-dom';
+import { useAuthContext } from './hooks/useAuthContext';
+import Routers from './Routers';
 
 function App() {
+  const { router } = Routers()
+
   return (
     <div className="App">
       <RouterProvider router={router} />

@@ -3,15 +3,20 @@ import styles from "./style.module.scss"
 import SearchIcon from '@mui/icons-material/Search';
 import { Avatar, Box, TextField, Typography } from '@mui/material';
 import SettingsIcon from '@mui/icons-material/Settings';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import CustomModal from '../../components/shared/customModal/CustomModal';
 import { Menus } from '../sidebar/MenuItems';
 import { useNavigate } from 'react-router-dom';
+import { useLogout } from '../../hooks/useLogout';
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { Login, Logout } from '@mui/icons-material';
+
 
 const CustomHeader = () => {
+  const { user } = useAuthContext()
   const [open, setOpen] = useState(false)
   const [comps, setComps] = useState([])
   const navigate = useNavigate()
+  const { logout } = useLogout()
 
   useEffect(() => {
     setComps(Menus)
@@ -31,6 +36,9 @@ const CustomHeader = () => {
     setOpen(false)
     navigate(path)
   }
+  const handleLogout = () => {
+    logout()
+  }
   return (
     <div className={styles.headerWrapper}>
       <p>Overview</p>
@@ -46,10 +54,22 @@ const CustomHeader = () => {
           style={{ color: '#718EBF', cursor: 'pointer' }}
           onClick={() => { navigate("/settings") }}
         />
-        <NotificationsIcon color='error'
-          style={{ cursor: 'pointer' }}
-          className={styles.notificationIcon} />
-        <Avatar variant='circular' />
+        {
+          user && (
+            <Logout color='error'
+              style={{ cursor: 'pointer' }}
+              onClick={handleLogout}
+              className={styles.notificationIcon} />
+          )
+        }
+        {
+          !user && (
+            <>
+              <Login color='action' />
+              <Avatar variant='circular' />
+            </>
+          )
+        }
       </Box>
       {
         open &&
