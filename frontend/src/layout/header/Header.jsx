@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./style.module.scss"
 import SearchIcon from '@mui/icons-material/Search';
-import { Avatar, Box, TextField, Typography } from '@mui/material';
-import SettingsIcon from '@mui/icons-material/Settings';
+import { Box, TextField, Typography } from '@mui/material';
 import CustomModal from '../../components/shared/customModal/CustomModal';
 import { Menus } from '../sidebar/MenuItems';
 import { useNavigate } from 'react-router-dom';
-import { useLogout } from '../../hooks/useLogout';
-import { useAuthContext } from '../../hooks/useAuthContext';
-import { Login, Logout } from '@mui/icons-material';
+import ProfileSpeedDial from './Account/Profile';
 
 
 const CustomHeader = () => {
-  const { user } = useAuthContext()
   const [open, setOpen] = useState(false)
   const [comps, setComps] = useState([])
   const navigate = useNavigate()
-  const { logout } = useLogout()
 
   useEffect(() => {
     setComps(Menus)
@@ -36,9 +31,6 @@ const CustomHeader = () => {
     setOpen(false)
     navigate(path)
   }
-  const handleLogout = () => {
-    logout()
-  }
   return (
     <div className={styles.headerWrapper}>
       <p>Overview</p>
@@ -49,28 +41,8 @@ const CustomHeader = () => {
             onChange={() => { setOpen(true) }}
             className={styles.headerSearchField} />
         </Box>
-        <SettingsIcon
-          className={styles.gearIcon}
-          style={{ color: '#718EBF', cursor: 'pointer' }}
-          onClick={() => { navigate("/settings") }}
-        />
-        {
-          user && (
-            <Logout color='error'
-              style={{ cursor: 'pointer' }}
-              onClick={handleLogout}
-              className={styles.notificationIcon} />
-          )
-        }
-        {
-          !user && (
-            <>
-              <Login color='action' />
-              <Avatar variant='circular' />
-            </>
-          )
-        }
       </Box>
+      <ProfileSpeedDial/>
       {
         open &&
         <CustomModal
@@ -84,7 +56,6 @@ const CustomHeader = () => {
                 onChange={handleChange}
                 sx={{
                   "& fieldset": {
-                    // border: 'none',
                     borderBottom: '1px solid blue'
                   }
                 }} />

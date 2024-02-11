@@ -1,0 +1,13 @@
+.profileSpeedDialWrapper {
+    .speedDial {
+        position: absolute;
+        right: 15px;
+
+        .speedDialIcon {
+            border-radius: 100%;
+            border: 2px solid blue;
+            height: 90%;
+            width: 90%;
+        }
+    }
+}
