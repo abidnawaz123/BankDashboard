@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 const CustomCreditCard = ({ otherCard, cardDetails }) => {
 
     const Item = styled(Paper)(() => ({
-        maxHeight: 235,
+        maxHeight: "auto",
         height: 235,
         borderRadius: 20,
     }));

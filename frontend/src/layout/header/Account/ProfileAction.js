@@ -5,7 +5,7 @@ import { useLogout } from "../../../hooks/useLogout";
 
 export const ProfileAction = () => {
     const navigate = useNavigate();
-    const logout = useLogout();
+    const {logout} = useLogout();
 
     const actions = [
         { icon: <Dashboard />, name: 'Dashboard', handleClick: () => { navigate("/") } },

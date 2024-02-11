@@ -1,5 +1,4 @@
-import { Navigate, RouterProvider } from 'react-router-dom';
-import { useAuthContext } from './hooks/useAuthContext';
+import { RouterProvider } from 'react-router-dom';
 import Routers from './Routers';
 
 function App() {

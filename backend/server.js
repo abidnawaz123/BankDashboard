@@ -14,7 +14,6 @@ app.use("/api/user", userRouters)
 app.use("/api/card", cardRouters)
 
 const mongoose = require("mongoose")
-
 //connect to database 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
@@ -25,3 +24,10 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error) => {
         console.log(error)
     })
+
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWM4NmFhZjZjM2I4MzU1MzQwZDNjY2QiLCJpYXQiOjE3MDc2NTIwMzgsImV4cCI6MTcwNzkxMTIzOH0.qlsA9wLUpoIatfVcSFHDCG6ooi5U4JCsogg9DX0HDY0
+//above is test@gmail.com token
+
+//     PORT=4000
+// MONGO_URI=mongodb+srv://abidnawaz:abidmernapp@mernapp.5azl0ee.mongodb.net/?retryWrites=true&w=majority
+// SECRET=mymernappsecretkey
