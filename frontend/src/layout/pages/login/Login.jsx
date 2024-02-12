@@ -4,8 +4,10 @@ import { useLogin } from '../../../hooks/useLogin'
 import styles from "./style.module.scss"
 import { useNavigate } from 'react-router-dom'
 import { CREATE_NEW_ACC, SIGN_UP } from '../../../utils/constants'
+import { useAuthContext } from '../../../hooks/useAuthContext'
 
 const Login = () => {
+    const { user } = useAuthContext()
     const navigate = useNavigate()
     const { login, isLoading, error } = useLogin()
     const [email, setEmail] = useState("")

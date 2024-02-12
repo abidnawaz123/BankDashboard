@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
 import { validationSchema } from './form-defination/add-card-defination';
-import {  Box, Button, CircularProgress, TextField } from '@mui/material';
+import { Box, Button, CircularProgress, TextField } from '@mui/material';
 import axios from 'axios';
 import styles from "./style.module.scss";
 import { useAuthContext } from '../../../../../hooks/useAuthContext';
@@ -10,21 +10,6 @@ const FormBase = () => {
     const { user } = useAuthContext()
     const [response, setResponse] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
-    const [state, setState] = React.useState({
-        open: false,
-        vertical: 'top',
-        horizontal: 'center',
-    });
-    const { vertical, horizontal, open } = state;
-
-
-    const handleClick = (newState) => () => {
-        setState({ ...newState, open: true });
-    };
-
-    const handleClose = () => {
-        setState({ ...state, open: false });
-    };
 
     return (
         <div className={styles.formBaseWrapper}>
